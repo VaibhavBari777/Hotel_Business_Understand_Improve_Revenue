@@ -1,73 +1,83 @@
-# Hotel Bookings Forecasting & Analytics Dashboard
+# Hotel Reservation Analytics & Forecasting Dashboard
 
-This Power BI dashboard provides a detailed view of historical hotel booking behavior, cancellation patterns, no-show rates, booking lead times, and future demand projections. It is designed to support hotel managers in understanding demand dynamics, managing revenue risks, and making informed operational decisions.
+This Power BI project delivers a comprehensive analysis of hotel reservation data, focusing on booking trends, cancellations, no-shows, lead time behavior, and future demand estimation. The dashboard is designed to assist hotel management teams in identifying demand patterns, minimizing revenue loss, and improving strategic and operational decisions.
 
-## Forecasting Method
+---
 
-Forecasting is implemented using Power BI's native time series forecasting features.
+## Demand Forecasting Overview
 
-- **Main forecast measure**: `Forecast Bookings Next Months` — estimates expected bookings for the upcoming period based on historical data from the Bookings table.
-- **Headline forecast number**: Shows **810.02** expected bookings in the near future (displayed in a prominent card visual).
-- Forecast performance is visualized in line + bar charts, comparing actual vs predicted bookings across Spring, Summer, and Winter seasons.
-- The model reflects seasonal patterns and continues the directional trends seen in recent historical data.
+Future booking demand is projected using Power BI’s built-in time series forecasting functionality.
 
-## Cancellation and Lead Time Analysis
+- **Core forecast metric**: `Forecast Bookings Next Months`, which predicts upcoming bookings based on historical reservation data.
+- **Forecast highlight**: A KPI card displays an estimated **810.02 bookings** expected in the near-term forecast horizon.
+- Forecast visuals combine line and column charts to contrast actual booking values with predicted figures across **Spring, Summer, and Winter** seasons.
+- Seasonal fluctuations and historical booking behavior are reflected in the forecast continuation.
 
-### Cancellations
-- Measured monthly via `Sum of Cancellations by Month` (displayed as bars).
-- Highest cancellation months: January (~20), July (~17), February (~15), March (~12).
-- Presented both in absolute numbers and scaled percentages (with an 85–100% reference band for easier comparison).
+---
 
-### No-Shows
-- **Average No-Shows per Month** (line chart): Shows a gradual improvement, dropping from ~1.4 early in the period to ~1.1 in more recent months.
-- **Total No-Shows per Month**: Highest in January (~40), lowest in March (~28), with a slight increase to ~35 in July.
-- **Daily No-Show Pattern**: Clear spike in the first 10 days of each month (up to 8 no-shows), then stabilizes at lower levels (typically 2–6) for the remainder.
+## Cancellation & Lead Time Insights
 
-### Booking Lead Time
-- Compared between **Direct** and **OTA** channels using `Count of Lead_Time by Bookings and Booking_Channel`.
-- Lead times increased noticeably early in the dataset (peaking around March), then dropped sharply in later months.
-- Direct bookings generally show slightly longer lead times compared to OTA channels.
+### Cancellation Trends
+- Monthly cancellations are represented using the metric **Sum of Cancellations by Month**.
+- Peak cancellation periods occur in **January (~20)** and **July (~17)**, followed by **February (~15)** and **March (~12)**.
+- Data is visualized both as raw counts and normalized percentage bands (85%–100%) for better comparison.
 
-## Key Observations
+### No-Show Behavior
+- **Average Monthly No-Shows** show a steady decline, improving from approximately **1.4** to **1.1** over time.
+- **Total No-Shows by Month** peak in **January (~40)**, reach a low in **March (~28)**, and rise slightly again by **July (~35)**.
+- **Daily analysis** indicates that no-shows are highest during the **first 10 days of each month**, reaching up to **8**, before stabilizing between **2–6** for the remainder of the month.
 
-1. **Improving No-Show Performance**  
-   Average monthly no-shows are trending downward — a positive sign that may reflect stronger confirmation processes or better guest quality.
+### Booking Lead Time Analysis
+- Lead times are compared between **Direct** and **OTA** booking channels.
+- Early periods show longer booking lead times, peaking around **March**, followed by a sharp reduction in later months.
+- Direct reservations typically demonstrate marginally longer lead times compared to OTA bookings, offering better planning visibility.
 
-2. **Seasonal Demand Shape**  
-   Bookings peak in Spring/Summer and are lowest in Winter. The forecast of ~810 bookings indicates this softening trend is likely to continue.
+---
 
-3. **Cancellations Concentrated in High-Demand Months**  
-   January and July show the most cancellations — likely linked to peak season overbooking or price sensitivity.
+## Analytical Insights
 
-4. **Rapidly Shortening Lead Times**  
-   Customers are increasingly booking closer to arrival date across both channels. This reduces predictability and makes revenue management more challenging.
+1. **Declining No-Show Rates**  
+   The consistent reduction in average no-shows suggests improved booking confirmation processes or better guest reliability.
 
-5. **Early-Month No-Show Concentration**  
-   No-shows are significantly higher during the first ~10 days of each month — possibly tied to arrival day patterns or confirmation/payment timing.
+2. **Clear Seasonality Pattern**  
+   Booking volumes are strongest during Spring and Summer, with noticeable drops in Winter. The forecasted value of ~810 bookings indicates continued softness ahead.
 
-6. **Forecast Slightly Conservative**  
-   The forecast line appears flatter than the recent downward movement in actual bookings, suggesting the model may be under-weighting the latest trend.
+3. **Cancellations Align with Peak Demand**  
+   Higher cancellations in January and July imply overbooking risks and increased price sensitivity during busy seasons.
 
-## Business Recommendations
+4. **Shift Toward Last-Minute Bookings**  
+   The sharp decline in lead times highlights a growing trend of late bookings, increasing uncertainty for capacity and pricing strategies.
 
-- **Handle Peak-Season Volatility**  
-  High cancellation rates in January and July suggest the need for more conservative overbooking policies or stronger cancellation penalties during high-demand periods.
+5. **Early-Month Risk Window**  
+   Elevated no-show activity in the first third of each month suggests a critical period requiring closer monitoring and proactive communication.
 
-- **Adapt to Last-Minute Booking Trend**  
-  Shorter lead times require agile pricing, last-minute offers, strong OTA partnerships, and real-time availability control.
+6. **Conservative Forecast Behavior**  
+   The forecast line appears smoother and less reactive to recent booking declines, indicating potential under-weighting of recent trends.
 
-- **Capitalize on Falling No-Show Rate**  
-  Continue reinforcing practices that have driven this improvement (e.g. automated reminders, deposit requirements, better pre-arrival communication).
+---
 
-- **Prepare for Lower Demand**  
-  The projected ~810 bookings signal potential occupancy challenges. Consider targeted promotions, off-season packages, or cost optimization in weaker periods (especially Winter).
+## Strategic Recommendations
 
-- **Strengthen Direct Channel**  
-  Longer lead times from direct bookings offer more predictability — maintain or increase incentives for direct reservations (loyalty benefits, exclusive rates).
+- **Refine Peak-Season Policies**  
+  Strengthen cancellation rules or adjust overbooking limits during high-demand months such as January and July.
 
-- **Staffing & Operations**  
-  Plan for higher uncertainty at the beginning of each month due to elevated no-show risk in the first 10 days.
+- **Improve Last-Minute Pricing Strategies**  
+  Adopt flexible pricing, dynamic offers, and real-time inventory management to respond to shorter booking windows.
 
-The dashboard should be refreshed with new bookings data regularly to track whether the softening demand continues, stabilizes, or reverses, and to evaluate if forecast settings need adjustment.
+- **Reinforce No-Show Prevention Measures**  
+  Continue initiatives like automated reminders, partial prepayments, and proactive guest engagement.
 
-**Data current as of**: July (based on the latest visible data in visuals)
+- **Prepare for Lower Occupancy Periods**  
+  With demand projected to soften, explore promotional campaigns, bundled offers, and cost optimization during low seasons.
+
+- **Encourage Direct Bookings**  
+  Since direct channels provide longer lead times, enhance loyalty incentives, exclusive benefits, and direct-booking discounts.
+
+- **Operational Planning**  
+  Allocate staffing and resources cautiously during the first 10 days of each month due to higher no-show volatility.
+
+---
+
+## Data Currency
+
+The dashboard reflects booking data available **up to July**, based on the most recent visuals displayed. Regular data refreshes are recommended to ensure forecast accuracy and timely trend detection.
